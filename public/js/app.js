@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:5000');
+var socket = io.connect();
 
 function addMessage (data) {
     $('#messages').prepend('<li class="list-group-item">' +

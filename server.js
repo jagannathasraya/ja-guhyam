@@ -7,8 +7,11 @@ var express = require('express'),
 
 app.use( express.static(__dirname + '/public'));
 
-server.listen(5000);
+app.set('port', (process.env.PORT || 5000));
 
+server.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 io.sockets.on('connection', function (socket) {
 
     sockets.push(socket);
